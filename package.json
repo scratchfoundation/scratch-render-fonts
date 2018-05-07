@@ -2,12 +2,38 @@
   "name": "scratch-render-fonts",
   "version": "1.0.0",
   "description": "",
+  "main": "./dist/web/scratch-render-fonts.js",
   "author": "Massachusetts Institute of Technology",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/LLK/scratch-render-fonts.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && webpack --progress --colors --bail",
+    "clean": "rimraf ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "homepage": "https://github.com/LLK/scratch-render-fonts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LLK/scratch-render-fonts.git"
+  },
+  "devDependencies": {
+    "base64-loader": "1.0.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1",
+    "base64-loader": "1.0.0",
+    "eslint": "^4.14.0",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-scratch": "^5.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "lodash.defaultsdeep": "4.6.0",
+    "minilog": "3.1.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "webpack": "3.10.0"
   }
 }
