@@ -3,18 +3,18 @@
 /* eslint-disable global-require */
 const FONTS = {
 	// @todo get suggestions for font names and maybe replace these names
-	'Typey McTypeface': require('base64-loader!scratch-render-fonts/NotoSans-Medium.ttf'),
-	'Seriffy McSerifface': require('base64-loader!scratch-render-fonts/SourceSerifPro-Regular.otf'),
-	'Handlee McHandface': require('base64-loader!scratch-render-fonts/handlee-regular.ttf'),
-	'Knewey McKneeface': require('base64-loader!scratch-render-fonts/knewave.ttf'),
-	'Griffy McGriffface': require('base64-loader!scratch-render-fonts/Griffy-Regular.ttf'),
-	'Gameface': require('base64-loader!scratch-render-fonts/PressStart2P-Regular.ttf'),
+	'Typey McTypeface': require('base64-loader!./NotoSans-Medium.ttf'),
+	'Seriffy McSerifface': require('base64-loader!./SourceSerifPro-Regular.otf'),
+	'Handlee McHandface': require('base64-loader!./handlee-regular.ttf'),
+	'Knewey McKneeface': require('base64-loader!./knewave.ttf'),
+	'Griffy McGriffface': require('base64-loader!./Griffy-Regular.ttf'),
+	'Gameface': require('base64-loader!./PressStart2P-Regular.ttf'),
 	// @todo remove fonts below when font conversion on import is done
-    'Donegal': require('base64-loader!scratch-render-fonts/DonegalOne-Regular.ttf'),
-    'Gloria': require('base64-loader!scratch-render-fonts/GloriaHallelujah.ttf'),
-    'Mystery': require('base64-loader!scratch-render-fonts/MysteryQuest-Regular.ttf'),
-    'Marker': require('base64-loader!scratch-render-fonts/PermanentMarker.ttf'),
-    'Scratch': require('base64-loader!scratch-render-fonts/Scratch.ttf')
+    'Donegal': require('base64-loader!./DonegalOne-Regular.ttf'),
+    'Gloria': require('base64-loader!./GloriaHallelujah.ttf'),
+    'Mystery': require('base64-loader!./MysteryQuest-Regular.ttf'),
+    'Marker': require('base64-loader!./PermanentMarker.ttf'),
+    'Scratch': require('base64-loader!./Scratch.ttf')
 };
 /* eslint-enable global-require */
 
