@@ -8,11 +8,7 @@ const FONTS = {
 	'Marker': require('base64-loader!scratch-render-fonts/knewave.ttf'),
 	'Curly': require('base64-loader!scratch-render-fonts/Griffy-Regular.ttf'),
 	'Pixel': require('base64-loader!scratch-render-fonts/PressStart2P-Regular.ttf'),
-	// @todo remove fonts below when font conversion on import is done
-    'Donegal': require('base64-loader!scratch-render-fonts/DonegalOne-Regular.ttf'),
-    'Gloria': require('base64-loader!scratch-render-fonts/GloriaHallelujah.ttf'),
-    'Mystery': require('base64-loader!scratch-render-fonts/MysteryQuest-Regular.ttf'),
-    'Marker': require('base64-loader!scratch-render-fonts/PermanentMarker.ttf'),
+	// @todo remove font below when font conversion on import is done
     'Scratch': require('base64-loader!scratch-render-fonts/Scratch.ttf')
 };
 /* eslint-enable global-require */
