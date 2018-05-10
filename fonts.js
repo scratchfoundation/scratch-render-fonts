@@ -2,13 +2,12 @@
 // First, have Webpack load their data as Base 64 strings.
 /* eslint-disable global-require */
 const FONTS = {
-	// @todo get suggestions for font names and maybe replace these names
-	'Typey McTypeface': require('base64-loader!scratch-render-fonts/NotoSans-Medium.ttf'),
-	'Seriffy McSerifface': require('base64-loader!scratch-render-fonts/SourceSerifPro-Regular.otf'),
-	'Handlee McHandface': require('base64-loader!scratch-render-fonts/handlee-regular.ttf'),
-	'Knewey McKneeface': require('base64-loader!scratch-render-fonts/knewave.ttf'),
-	'Griffy McGriffface': require('base64-loader!scratch-render-fonts/Griffy-Regular.ttf'),
-	'Gameface': require('base64-loader!scratch-render-fonts/PressStart2P-Regular.ttf'),
+	'Sans Serif': require('base64-loader!scratch-render-fonts/NotoSans-Medium.ttf'),
+	'Serif': require('base64-loader!scratch-render-fonts/SourceSerifPro-Regular.otf'),
+	'Handwriting': require('base64-loader!scratch-render-fonts/handlee-regular.ttf'),
+	'Marker': require('base64-loader!scratch-render-fonts/knewave.ttf'),
+	'Curly': require('base64-loader!scratch-render-fonts/Griffy-Regular.ttf'),
+	'Pixel': require('base64-loader!scratch-render-fonts/PressStart2P-Regular.ttf'),
 	// @todo remove fonts below when font conversion on import is done
     'Donegal': require('base64-loader!scratch-render-fonts/DonegalOne-Regular.ttf'),
     'Gloria': require('base64-loader!scratch-render-fonts/GloriaHallelujah.ttf'),
