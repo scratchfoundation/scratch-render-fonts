@@ -30,3 +30,7 @@ jobs:
         skip_cleanup: true
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
+stages:
+- test
+- name: release
+  if: branch in (master, develop) and type != pull_request
