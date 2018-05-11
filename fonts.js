@@ -12,7 +12,6 @@ const FONTS = {
     'Donegal': require('base64-loader!./DonegalOne-Regular.ttf'),
     'Gloria': require('base64-loader!./GloriaHallelujah.ttf'),
     'Mystery': require('base64-loader!./MysteryQuest-Regular.ttf'),
-    'Marker': require('base64-loader!./PermanentMarker.ttf'),
     'Scratch': require('base64-loader!./Scratch.ttf')
 };
 /* eslint-enable global-require */
