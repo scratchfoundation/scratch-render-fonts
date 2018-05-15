@@ -14,13 +14,13 @@ install:
   - npm --production=false prune
 jobs:
   include:
-    - env: NPM_SCRIPT=lint
-      node_js: 8
     - stage: release
       node_js: 8
       env: NPM_SCRIPT=build
       before_deploy:
-      - npm --no-git-tag-version version $($(npm bin)/json -f package.json version)-prerelease.$(date +%s)
+      - VPKG=$($(npm bin)/json -f package.json version)
+      - export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)
+      - npm --no-git-tag-version version $VERSION
       - git config --global user.email $(git log --pretty=format:"%ae" -n1)
       - git config --global user.name $(git log --pretty=format:"%an" -n1)
       deploy:
