@@ -7,7 +7,7 @@ const FONTS = {
 	'Handwriting': require('base64-loader!./handlee-regular.ttf'),
 	'Marker': require('base64-loader!./knewave.ttf'),
 	'Curly': require('base64-loader!./Griffy-Regular.ttf'),
-	'Pixel': require('base64-loader!./Pixel-UniCode.ttf'),
+	'Pixel': require('base64-loader!./Grand9K-Pixel.ttf'),
 	// @todo remove fonts below when font conversion on import is done
     'Donegal': require('base64-loader!./DonegalOne-Regular.ttf'),
     'Gloria': require('base64-loader!./GloriaHallelujah.ttf'),
