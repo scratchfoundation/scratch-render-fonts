@@ -2,7 +2,7 @@
   "name": "scratch-render-fonts",
   "version": "1.0.0",
   "description": "",
-  "main": "./fonts.js",
+  "main": "./src/index.js",
   "author": "Massachusetts Institute of Technology",
   "repository": {
     "type": "git",
