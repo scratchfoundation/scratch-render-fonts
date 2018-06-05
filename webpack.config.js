@@ -5,7 +5,7 @@ const base = {
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-        'scratch-render-fonts': './fonts.js'
+        'scratch-render-fonts': './src/index.js'
     },
     module: {
         rules: [{
