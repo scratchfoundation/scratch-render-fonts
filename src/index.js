@@ -2,14 +2,12 @@
 // First, have Webpack load their data as Base 64 strings.
 /* eslint-disable global-require */
 const FONTS = {
-	'Sans Serif': require('base64-loader!scratch-render-fonts/NotoSans-Medium.ttf'),
-	'Serif': require('base64-loader!scratch-render-fonts/SourceSerifPro-Regular.otf'),
-	'Handwriting': require('base64-loader!scratch-render-fonts/handlee-regular.ttf'),
-	'Marker': require('base64-loader!scratch-render-fonts/knewave.ttf'),
-	'Curly': require('base64-loader!scratch-render-fonts/Griffy-Regular.ttf'),
-	'Pixel': require('base64-loader!scratch-render-fonts/PressStart2P-Regular.ttf'),
-	// @todo remove font below when font conversion on import is done
-    'Scratch': require('base64-loader!scratch-render-fonts/Scratch.ttf')
+	'Sans Serif': require('base64-loader!./NotoSans-Medium.ttf'),
+	'Serif': require('base64-loader!./SourceSerifPro-Regular.otf'),
+	'Handwriting': require('base64-loader!./handlee-regular.ttf'),
+	'Marker': require('base64-loader!./knewave.ttf'),
+	'Curly': require('base64-loader!./Griffy-Regular.ttf'),
+	'Pixel': require('base64-loader!./Grand9K-Pixel.ttf'),
 };
 /* eslint-enable global-require */
 

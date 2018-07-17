@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - 8
+  - node
+env:
+  global:
+  - NODE_ENV=production
+cache:
+  directories:
+    - node_modules
+install:
+  - npm --production=false install
+  - npm --production=false update
+  - npm --production=false prune
+jobs:
+  include:
+    - stage: release
+      script: npm run build
+      node_js: 8
+      before_deploy:
+      - VPKG=$($(npm bin)/json -f package.json version)
+      - export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)
+      - npm --no-git-tag-version version $VERSION
+      deploy:
+      - provider: npm
+        on:
+          all_branches: true
+        skip_cleanup: true
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+stages:
+- test
+- name: release
+  if: branch in (master, develop) and type != pull_request
