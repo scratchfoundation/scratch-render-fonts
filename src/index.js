@@ -2,12 +2,13 @@
 // First, have Webpack load their data as Base 64 strings.
 /* eslint-disable global-require */
 const FONTS = {
-	'Sans Serif': require('base64-loader!./NotoSans-Medium.ttf'),
-	'Serif': require('base64-loader!./SourceSerifPro-Regular.otf'),
-	'Handwriting': require('base64-loader!./handlee-regular.ttf'),
-	'Marker': require('base64-loader!./knewave.ttf'),
-	'Curly': require('base64-loader!./Griffy-Regular.ttf'),
-	'Pixel': require('base64-loader!./Grand9K-Pixel.ttf'),
+    'Sans Serif': require('base64-loader!./NotoSans-Medium.ttf'),
+    'Serif': require('base64-loader!./SourceSerifPro-Regular.otf'),
+    'Handwriting': require('base64-loader!./handlee-regular.ttf'),
+    'Marker': require('base64-loader!./knewave.ttf'),
+    'Curly': require('base64-loader!./Griffy-Regular.ttf'),
+    'Pixel': require('base64-loader!./Grand9K-Pixel.ttf'),
+    'Scratch': require('base64-loader!./Scratch.ttf')
 };
 /* eslint-enable global-require */
 
