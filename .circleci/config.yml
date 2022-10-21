@@ -27,9 +27,6 @@ commands:
       - run:
           name: Setup
           command: |
-            echo "export NPM_TAG=latest" >> $BASH_ENV
-            echo "export NODE_ENV=production" >> $BASH_ENV
-            echo "export RELEASE_TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $BASH_ENV
             npm --production=false install
             npm --production=false update
             npm --production=false prune
@@ -44,6 +41,9 @@ commands:
       - run:
           name: Deploy
           command: |
+            echo "export NPM_TAG=latest" >> $BASH_ENV
+            echo "export NODE_ENV=production" >> $BASH_ENV
+            echo "export RELEASE_TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $BASH_ENV
             npm run build
             VPKG=$($(npm bin)/json -f package.json version)
             echo "export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)" >> $BASH_ENV
