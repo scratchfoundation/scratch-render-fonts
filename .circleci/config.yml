@@ -27,9 +27,9 @@ commands:
       - run:
           name: Setup
           command: |
-            npm --production=false install
-            npm --production=false update
-            npm --production=false prune
+            npm install
+            npm update
+            npm prune
   test:
     steps:
       - run:
