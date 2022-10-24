@@ -4,6 +4,7 @@ executors:
   default-executor:
     docker:
       - image: "cimg/node:8.17.0"
+    working_directory: ~/project
     resource_class: large
 
 commands:
@@ -50,13 +51,16 @@ jobs:
       - checkout
       - setup
       - test
+      - persist_to_workspace:
+          root: ~/project
+          paths: .
   deploy:
     executor: default-executor
     steps:
-      - checkout
-      - setup
+      - attach_workspace:
+          at: ~/project
+      - setup_deploy
       - deploy
-      - after_deploy
 
 workflows:
   build-and-test-workflow:
