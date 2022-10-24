@@ -62,6 +62,16 @@ jobs:
       - deploy
 
 workflows:
+  build-and-test-workflow:
+    when:
+      not:
+        or:
+          - equal: [ master, <<pipeline.git.branch>> ]
+          - equal: [ develop, <<pipeline.git.branch>> ]
+          - equal: [ hotfix/*, <<pipeline.git.branch>> ]
+    jobs:
+      - build-and-test
+
   deploy-workflow:
     when:
       or:
