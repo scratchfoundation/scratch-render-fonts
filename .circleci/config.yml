@@ -38,7 +38,8 @@ commands:
       - run:
           name: After Deploy
           command: |
-            echo $VERSION
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
 
 jobs:
   build-and-test:
