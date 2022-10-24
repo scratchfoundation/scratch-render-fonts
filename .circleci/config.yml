@@ -21,10 +21,10 @@ commands:
           name: Test
           command: |
             npm run test
-  deploy:
+  setup_deploy:
     steps:
       - run:
-          name: Deploy
+          name: Setup Deploy
           command: |
             echo "export NPM_TAG=latest" >> $BASH_ENV
             echo "export NODE_ENV=production" >> $BASH_ENV
@@ -32,12 +32,14 @@ commands:
             npm run build
             VPKG=$($(npm bin)/json -f package.json version)
             echo "export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)" >> $BASH_ENV
-            npm --no-git-tag-version version $VERSION
-  after_deploy:
+            
+  deploy:
     steps:
       - run:
-          name: After Deploy
+          name: Deploy
           command: |
+            echo $VERSION
+            npm --no-git-tag-version version $VERSION
             npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
             npm publish
 
