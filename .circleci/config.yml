@@ -3,25 +3,10 @@ version: 2.1
 executors:
   default-executor:
     docker:
-      - image: "cimg/node:lts"
+      - image: "cimg/node:8.17.0"
     resource_class: large
 
 commands:
-  restore_test_cache:
-    steps:
-      - restore_cache:
-          keys:
-            - v1-test-cache-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ .Revision }}
-            - v1-test-cache-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}
-            - v1-test-cache-
-  save_test_cache:
-    steps:
-      - save_cache:
-          when: always
-          key: v1-test-cache-{{ .Environment.CIRCLE_JOB }}-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - node_modules
-
   setup:
     steps:
       - run:
@@ -60,19 +45,15 @@ jobs:
     executor: default-executor
     steps:
       - checkout
-      - restore_test_cache
       - setup
       - test
-      - save_test_cache
   deploy:
     executor: default-executor
     steps:
       - checkout
-      - restore_test_cache
       - setup
       - deploy
       - after_deploy
-      - save_test_cache
 
 workflows:
   build-and-test-workflow:
