@@ -69,17 +69,17 @@ workflows:
           - equal: [ master, <<pipeline.git.branch>> ]
           - equal: [ develop, <<pipeline.git.branch>> ]
           - matches: { pattern: "^hotfix.*", value: <<pipeline.git.branch>> }
-          - matches: { pattern: "^release.*", value: << pipeline.git.branch >> }
+          - matches: { pattern: "^release.*", value: <<pipeline.git.branch>> }
     jobs:
       - build-and-test
 
   deploy-workflow:
     when:
       or:
-        - equal: [master, <<pipeline.git.branch>>]
-        - equal: [develop, <<pipeline.git.branch>>]
-        - matches: { pattern: "^hotfix.*", value: << pipeline.git.branch >> }
-        - matches: { pattern: "^release.*", value: << pipeline.git.branch >> }
+        - equal: [ master, <<pipeline.git.branch>> ]
+        - equal: [ develop, <<pipeline.git.branch>> ]
+        - matches: { pattern: "^hotfix.*", value: <<pipeline.git.branch>> }
+        - matches: { pattern: "^release.*", value: <<pipeline.git.branch>> }
     jobs:
       - build-and-test
       - deploy:
