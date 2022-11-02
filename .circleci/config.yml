@@ -1,0 +1,89 @@
+version: 2.1
+
+executors:
+  default-executor:
+    docker:
+      - image: "cimg/node:8.17.0"
+    working_directory: ~/project
+    resource_class: medium
+
+commands:
+  setup:
+    steps:
+      - run:
+          name: Setup
+          command: |
+            npm install
+            npm update
+            npm prune
+  test:
+    steps:
+      - run:
+          name: Test
+          command: |
+            npm run test
+  setup_deploy:
+    steps:
+      - run:
+          name: Setup Deploy
+          command: |
+            echo "export NPM_TAG=latest" >> $BASH_ENV
+            echo "export NODE_ENV=production" >> $BASH_ENV
+            echo "export RELEASE_TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $BASH_ENV
+            npm run build
+            VPKG=$($(npm bin)/json -f package.json version)
+            echo "export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)" >> $BASH_ENV
+            
+  deploy:
+    steps:
+      - run:
+          name: Deploy
+          command: |
+            npm --no-git-tag-version version $VERSION
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
+
+jobs:
+  build-and-test:
+    executor: default-executor
+    steps:
+      - checkout
+      - setup
+      - test
+      - persist_to_workspace:
+          root: ~/project
+          paths: .
+  deploy:
+    executor: default-executor
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - setup_deploy
+      - deploy
+
+workflows:
+  build-and-test-workflow:
+    when:
+      not:
+        or:
+          - equal: [ master, <<pipeline.git.branch>> ]
+          - equal: [ develop, <<pipeline.git.branch>> ]
+          - matches: { pattern: "^hotfix.*", value: <<pipeline.git.branch>> }
+          - matches: { pattern: "^release.*", value: <<pipeline.git.branch>> }
+    jobs:
+      - build-and-test
+
+  deploy-workflow:
+    when:
+      or:
+        - equal: [ master, <<pipeline.git.branch>> ]
+        - equal: [ develop, <<pipeline.git.branch>> ]
+        - matches: { pattern: "^hotfix.*", value: <<pipeline.git.branch>> }
+        - matches: { pattern: "^release.*", value: <<pipeline.git.branch>> }
+    jobs:
+      - build-and-test
+      - deploy:
+          context:
+            - scratch-npm-creds
+          requires:
+            - build-and-test
