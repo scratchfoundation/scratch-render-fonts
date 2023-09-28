@@ -6,15 +6,15 @@
   "author": "Massachusetts Institute of Technology",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/LLK/scratch-render-fonts.git"
+    "url": "git+ssh://git@github.com/scratchfoundation/scratch-render-fonts.git"
   },
   "scripts": {
-    "build": "npm run clean && webpack --progress --colors --bail",
+    "build": "npm run clean && webpack --progress --bail",
     "clean": "rimraf ./dist",
     "test": "npm run build",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --watch"
   },
-  "homepage": "https://github.com/LLK/scratch-render-fonts#readme",
+  "homepage": "https://github.com/scratchfoundation/scratch-render-fonts#readme",
   "dependencies": {
     "base64-loader": "1.0.0"
   },
