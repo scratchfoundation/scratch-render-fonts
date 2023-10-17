@@ -13,9 +13,7 @@ commands:
       - run:
           name: Setup
           command: |
-            npm install
-            npm update
-            npm prune
+            npm ci
   test:
     steps:
       - run:
