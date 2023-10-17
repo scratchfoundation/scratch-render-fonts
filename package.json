@@ -11,6 +11,7 @@
   "scripts": {
     "build": "npm run clean && webpack --progress --bail",
     "clean": "rimraf ./dist",
+    "lint": "eslint .",
     "test": "npm run build",
     "watch": "webpack --progress --watch"
   },

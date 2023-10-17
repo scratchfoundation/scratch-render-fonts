@@ -35,7 +35,9 @@ jobs:
           GitHub head ref: ${{ github.head_ref }}
           EOF
       - name: Setup
-        run: npm ci --legacy-peer-deps
+        run: npm ci
+      - name: Lint
+        run: npm run lint
       - name: Setup Deploy
         run: |
           echo "export NPM_TAG=latest" >> $GITHUB_ENV
