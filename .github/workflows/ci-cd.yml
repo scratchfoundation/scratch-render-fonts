@@ -38,17 +38,10 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Setup Deploy
-        run: |
-          echo "export NPM_TAG=latest" >> $GITHUB_ENV
-          echo "export NODE_ENV=production" >> $GITHUB_ENV
-          echo "export RELEASE_TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-          npm run build
-          VPKG=$($(npm bin)/json -f package.json version)
-          echo "export VERSION=${VPKG}-prerelease.$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
-      - name: Deploy
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/hotfix') || startsWith(github.ref, 'refs/heads/release'))
-        run: |
-          npm --no-git-tag-version version $VERSION
-          npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          npm publish
+      - name: Build
+        run: npm run build
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx --no -- semantic-release
