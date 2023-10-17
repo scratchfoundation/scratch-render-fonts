@@ -4,6 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "author": "Massachusetts Institute of Technology",
+  "homepage": "https://github.com/scratchfoundation/scratch-render-fonts#readme",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/scratchfoundation/scratch-render-fonts.git"
@@ -15,7 +16,11 @@
     "test": "npm run build",
     "watch": "webpack --progress --watch"
   },
-  "homepage": "https://github.com/scratchfoundation/scratch-render-fonts#readme",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "base64-loader": "1.0.0"
   },
