@@ -3,7 +3,7 @@ version: 2.1
 executors:
   default-executor:
     docker:
-      - image: "cimg/node:8.17.0"
+      - image: "cimg/node:20.8.0"
     working_directory: ~/project
     resource_class: medium
 
