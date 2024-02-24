@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/scratchfoundation/scratch-render-fonts/compare/v1.0.6...v1.0.7) (2024-02-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency scratch-semantic-release-config to v1.0.14 ([2d383a2](https://github.com/scratchfoundation/scratch-render-fonts/commit/2d383a20ed49611ec4dc76979e64e01cc059fe06))
+
 ## [1.0.6](https://github.com/scratchfoundation/scratch-render-fonts/compare/v1.0.5...v1.0.6) (2024-02-22)
 
 
