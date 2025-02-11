@@ -25,8 +25,8 @@
     "base64-loader": "^1.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cli": "19.7.1",
+    "@commitlint/config-conventional": "19.7.1",
     "babel-core": "6.26.3",
     "babel-eslint": "10.1.0",
     "babel-loader": "7.1.5",
