@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.260](https://github.com/scratchfoundation/scratch-render-fonts/compare/v1.0.259...v1.0.260) (2026-11-27)
+
+
+### Bug Fixes
+
+* **deps:** lock file maintenance ([#363](https://github.com/scratchfoundation/scratch-render-fonts/issues/363)) ([9718511](https://github.com/scratchfoundation/scratch-render-fonts/commit/97185118b8099e7cf7b6b6150df7d59b857336d6))
+
 ## [1.0.259](https://github.com/scratchfoundation/scratch-render-fonts/compare/v1.0.258...v1.0.259) (2026-11-12)
 
 
